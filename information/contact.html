@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Contact us</title>
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+	<!-- font awesome icon -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	<!-- navigation dropdown menu from w3schools.com-->
+	<header>
+		<ul class="navbar">
+			<li class="dropdown" id="brand">
+				<a href="../home.html"><i class="fas fa-carrot"></i> GOGO FOOD <i class="fas fa-angle-down"></i></a>
+				<section class="dropdown-content">
+					<a href="about.html">ABOUT</a>
+					<a href="../features/restaurants.html">RESTAURANTS</a>
+					<a href="../features/reward.html">REWARD PROGRAM</a>
+					<a href="contact.html">CONTACT US</a>
+					<a href="../account/login.html">LOGIN <i class="fas fa-user"></i></a>
+					<a href="../account/register.html">SIGN UP</a>
+				</section>
+			</li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="../features/restaurants.html">RESTAURANTS</a></li>
+			<li><a href="../features/reward.html">REWARD PROGRAM</a></li>
+			<li><a href="contact.html">CONTACT US</a></li>
+			<li><a href="../account/login.html">LOGIN <i class="fas fa-user"></i></a></li>
+		</ul>
+	</header>
+
+	<!-- contact form -->
+	<article class="contact-container">
+		<section class="contact-top-column">
+			<p class="customer-service">Customer Service</p>
+			<p>Monday-Friday 8:00am to 6:00pm</p>
+			<p class="source">253-236-4756</p>
+			<p class="hours">customerservice@gogofood.com</p>
+			
+		</section>
+		<section class="contact-bot-column">
+			<h4>CONTACT US</h4>
+			<p class="feedback">Please fill out this form if you have any questions or feedback for our application. Thank you!</p>
+			<form>
+				<p class="left">
+					<label for="name">Name</label>
+					<input type="text" class="contact-input" name="username" id="name" placeholder="Type your name"></p>
+				<p class="left">
+					<label for="email">Email</label>
+					<input type="Email" class="contact-input" name="email" id="email" placeholder="Type your email">
+				</p>
+				<p class="left">
+					<label for="comment">Comment</label>
+					<input type="text" class="contact-input comment" name="comment" id="comment">
+				</p>
+				<br>
+				
+				<br>
+			</form>
+			<button id="button1" onclick="myFunction()">Submit</button>
+		</section>
+	</article>
+		
+	<script
+ 		src="https://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous">
+  	</script>
+
+  	<!--Add message and empty text inputs upon submitting form-->
+  	<script>
+		$(document).ready(function(){
+			$("#button1").click(function(){
+				 var $this = $(".feedback");
+				 var originalText = $this.text();
+				 $this.text("Your form have been successfully submited. Thank you!");
+				 setTimeout(function() {
+					$this.text(originalText)
+				}, 2000);
+				$("input").val("");
+			});
+		});
+	</script>
+</body>
+</html>
