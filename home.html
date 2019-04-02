@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Gogo Food</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<!-- font awesome icon -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	
+	<!-- Website navigation bar - Dropdown menu from W3schools.com -->
+	<header>
+		<ul class="navbar">
+			<li class="dropdown" id="brand">
+				<a href="home.html"><i class="fas fa-carrot"></i> GOGO FOOD <i class="fas fa-angle-down"></i></a>
+				<section class="dropdown-content">
+					<a href="information/about.html">ABOUT</a>
+					<a href="features/restaurants.html">RESTAURANTS</a>
+					<a href="features/reward.html">REWARD PROGRAM</a>
+					<a href="information/contact.html">CONTACT US</a>
+					<a href="account/login.html">LOGIN <i class="fas fa-user"></i></a>
+					<a href="account/register.html">SIGN UP</a>
+				</section>
+			</li>
+  			<li><a href="information/about.html">ABOUT</a></li>
+  			<li><a href="features/restaurants.html">RESTAURANTS</a></li>
+  			<li><a href="features/reward.html">REWARD PROGRAM</a></li>
+ 			<li><a href="information/contact.html">CONTACT US</a></li>
+ 			<li><a href="account/login.html">LOGIN <i class="fas fa-user"></i></a></li>
+		</ul>
+		<h1 id="top">GOGO FOOD</h1>
+		<h2 class="source">ABOUT | RESTAURANTS | REWARD PROGRAM | CONTACT US</h2>
+		<hr class="divider">
+		<br>
+	</header>
+
+
+	<!-- Image Slideshow code modified from w3schools.com -->
+	<section class="slideshow-container">
+		<section class="slide fade">
+			<section class ="numbertext"> 1 / 4</section>
+			<img src="food4.jpg" width="250" height="450" alt="food4">
+			<section class="caption">YUM YUM YUM!!</section>
+		</section>
+		<section class="slide fade">
+			<section class ="numbertext"> 2 / 4</section>
+			<img src="food2.jpg" width="1000" height="450" alt="food2">
+			<section class="caption">International Cuisine</section>
+		</section>
+		<section class="slide fade">
+			<section class ="numbertext"> 3 / 4</section>
+			<img src="food3.jpg" width="1000" height="450" alt="food3">
+			<section class="caption">Made from scratch</section>
+		</section>
+		<section class="slide fade">
+			<section class ="numbertext"> 4 / 4</section>
+			<img src="food.jpg" width="1000" height="450" alt="food">
+			<section class="caption">Satisfy your cravings</section>
+		</section>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</section>
+	<br>
+	<section style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span> 
+		<span class="dot" onclick="currentSlide(2)"></span> 
+		<span class="dot" onclick="currentSlide(3)"></span> 
+		<span class="dot" onclick="currentSlide(4)"></span> 
+	</section>
+	
+				
+	<article class="home-info">	
+		<section class="home-top">
+			<h2>What is GOGO FOOD?</h2>
+			<hr>
+			<p><dfn>GOGO FOOD</dfn> is an applicaion tool that lets customer order food at a restaurant ahead of time to avoid waiting in line and allow the food to be ready to be served as they arrive (Reservation).</p>
+		</section>
+		<section class="home-middle">
+			<h2>Why is this important to us?</h2>
+			<hr>
+			<ul class="list">
+				<li>Positive <em>social</em> and <em>economical</em> impact for business and restaurants</li>
+				<li>Students can order food on the go using their mobile phone</li>
+				<li>The application will help college students save time when ordering food</li>
+				<li>An easy way to order/cancel food orders</li>
+				<li>The system will support multiple languages</li>
+			</ul>
+		</section>
+		<section class="home-bottom">
+			<h2>How to get started (Website/App)</h2>
+			<hr>
+			<aside>
+				<p><b>Mobile app</b><p>
+				<p><strong>Follow the same procedures below for mobile app:</strong></p>
+			</aside>
+			<ol class="list">
+				<li>Sign up for an account</li>
+				<li>Join our reward program to get extra benefits for every purchases that you make</li>
+				<li>Make an order request at your chosen restaurant and select the pick-up time</li>
+				<li>Give payment information and confirm order</li>
+				<li>Arrive at the selected restaurant and pick up your order at the designated time</li>
+			</ol>
+			<h2>That's it! Quick, Easy, and Reliable</h2>
+		</section>
+	</article>
+
+	<!-- Contact Information -->
+	<address>
+		Written by <a href="mailto:webmaster@example.com">Thi Nguyen</a>.<br> 
+		Visit us at: www.gogofood.com<br>
+		Box 564, Disneyland<br>
+		USA
+	</address>
+	<footer>
+		<p class="source">Application inspired by <i>Ordering</i>. Check their website out <a href="https://www.ordering.co/">here</a></p>
+		<a href="#top">Return to the top</a>
+	</footer>
+
+	<!-- Javascript code modified from w3schools.com-->
+	<!-- Image Slideshow-->
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("slide");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1} 
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none"; 
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  
+		  slides[slideIndex-1].style.display = "block"; 
+		  dots[slideIndex-1].className += " active";
+		}		
+	</script>
+
+</body>
+</html>
