@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+	<!-- font awesome icon -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	<!-- navigation dropdown menu from w3schools.com -->
+	<header>
+		<ul class="navbar">
+			<li class="dropdown" id="brand">
+				<a href="../home.html"><i class="fas fa-carrot"></i> GOGO FOOD <i class="fas fa-angle-down"></i></a>
+				<section class="dropdown-content">
+					<a href="../information/about.html">ABOUT</a>
+					<a href="../features/restaurants.html">RESTAURANTS</a>
+					<a href="../features/reward.html">REWARD PROGRAM</a>
+					<a href="../information/contact.html">CONTACT US</a>
+					<a href="login.html">LOGIN <i class="fas fa-user"></i></a>
+					<a href="register.html">SIGN UP</a>
+				</section>
+			</li>
+			<li><a href="../information/about.html">ABOUT</a></li>
+			<li><a href="../features/restaurants.html">RESTAURANTS</a></li>
+			<li><a href="../features/reward.html">REWARD PROGRAM</a></li>
+			<li><a href="../information/contact.html">CONTACT US</a></li>
+			<li><a href="login.html">LOGIN <i class="fas fa-user"></i></a></li>
+		</ul>
+	</header>
+	<!-- login form centered in the middle with inputs and buttons -->
+	<section id="login">
+		<h2 id="login-title">Login</h2>
+		<img id="user-image" src="https://community.smartsheet.com/sites/default/files/default_user.jpg" alt="user" width="100" height="100">
+		<form id="login-form">
+			<p class="left">
+				<label for="user">Username</label>
+				<input type="text" class="input" name="username" id="user" placeholder="Type your username" required></p>
+			<p class="left">
+				<label for="pass">Password</label>
+				<input type="Password" class="input" name="password" id="pass" placeholder="Type your password" required></p>
+				<h5 id="capsLock">Caps lock is on</h5>
+			
+			<p class="left">
+				<label for="remember">Show password</label>
+				<input type="checkbox" name="remember" id="remember">
+			</p>
+			<br>
+			<button class="button">Sign In</button>
+			<p id="signup">Don't have an account - <a href="register.html">SIGN UP</a></p>
+			<br>
+			<i class="fab fa-facebook icon"></i>
+			<i class="fab fa-google-plus-square icon"></i>
+			<i class="fab fa-twitter-square icon"></i>
+		</form>
+	</section>
+	<footer id="footer">
+		<p>GOGO FOOD | Disney Land, CA</p>
+	</footer>
+
+	<!-- Jquery function -->
+	<script
+  		src="https://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous">
+  	</script>
+
+  	<!-- Detect caps lock and toggler for show password input -->
+  	<script>
+		$(document).ready(function(){
+			$("#remember").click(function(){
+				$("#remember").is(":checked") ? $("#pass").attr("type", "text") : $("#pass").attr("type", "password");
+			});
+			var input = document.getElementsByClassName("input");
+			var text = document.getElementById("capsLock");
+			for (var i = 0; i < input.length; i++) {
+				input[i].addEventListener("keyup", function(event) {
+				if (event.getModifierState("CapsLock")) {
+					text.style.display = "block";
+				  } else {
+					text.style.display = "none"
+				  }
+				});
+			}
+		});
+	</script>
+</body>
+</html>
