@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>restaurants</title>
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+	<!-- font awesome icon -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	<!-- navigation dropdown menu from w3schools.com-->
+	<header>
+		<ul class="navbar">
+			<li class="dropdown" id="brand">
+				<a href="../home.html"><i class="fas fa-carrot"></i> GOGO FOOD <i class="fas fa-angle-down"></i></a>
+				<section class="dropdown-content">
+					<a href="../information/about.html">ABOUT</a>
+					<a href="restaurants.html">RESTAURANTS</a>
+					<a href="reward.html">REWARD PROGRAM</a>
+					<a href="../information/contact.html">CONTACT US</a>
+					<a href="../account/login.html">LOGIN <i class="fas fa-user"></i></a>
+					<a href="../account/register.html">SIGN UP</a>
+				</section>
+			</li>
+			<li><a href="../information/about.html">ABOUT</a></li>
+			<li><a href="restaurants.html">RESTAURANTS</a></li>
+			<li><a href="reward.html">REWARD PROGRAM</a></li>
+			<li><a href="../information/contact.html">CONTACT US</a></li>
+			<li><a href="../account/login.html">LOGIN <i class="fas fa-user"></i></a></li>
+		</ul>
+	</header>
+	<article class="restaurant-container">
+		<section class="restaurant-top">
+			<h2 id="title">Restaurants</h2>
+			<!-- restaurant filter list -->
+			<form>
+				<input type="text" id="restaurant-input" name="search" onkeyup="searchFilter()" placeholder="Search for restaurant...">
+			</form>
+		</section>
+		
+		<!-- table list -->
+		<section class="restaurant-bottom">
+			<h3 class="source header">Top Ranking</h3>
+			<table id="restaurantTable">
+				<thead>
+					<tr>
+						<th>Logo</th>
+						<th>Name</th>
+						<th>Categories</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img src="ram.png" alt="Ram Restaurant & Brewery" title="Ram Restaurant & Brewery" width="100" height="100"></td>
+						<td>Ram Restaurant & Brewery</td>
+						<td>American, Vegetarian Friendly, Vegan Options, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="burgerking.jpg" alt="Burger King" title="Burger King" width="100" height="100"></td>
+						<td>Burger King</td>
+						<td>American Fast Food</td>
+						<td>$</td>
+					</tr>
+					<tr>
+						<td><img src="blackangus.jpg" alt="Black Angus Steakhouse" title="Black Angus Steakhouse" height="100" width="100"></td>
+						<td>Black Angus Steakhouse</td>
+						<td>American, Steakhouse Bar, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="jimmy.png" alt="Jimmy Mac's Roadhouse" title="Jimmy Mac's Roadhouse" width="100" height="100"></td>
+						<td>Jimmy Mac's Roadhouse</td>
+						<td>American, Steakhouse Bar, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="east.png" alt="East India Grill" title="East India Grill" width="100" height="100"></td>
+						<td>East India Grill</td>
+						<td>Indian, Vegetarian Friendly, Vegan Options, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="thai.jpg" alt="Thai Bistro" title="Thai Bistro" width="100" height="100"></td>
+						<td>Thai Bistro</td>
+						<td>Asian, Thai, Vegetarian Friendly, Vegan Options, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					<tr>
+						<td><img src="red.jpg" alt="Red Lobster" title="Red Lobster" width="100" height="100"></td>
+						<td>Red Lobster</td>
+						<td>American, Seafood, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="olive.png" alt="Olive Garden" title="Olive Garden" width="100" height="100"></td>
+						<td>Olive Garden</td>
+						<td>Italian, Vegetarian, Friendly Vegan Options, Gluten Free Options</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="apple.jpg" alt="Applebee's" title="Applebee" width="100" height="100"></td>
+						<td>Applebee's</td>
+						<td>American, Bar</td>
+						<td>$$ - $$$</td>
+					</tr>
+					<tr>
+						<td><img src="rock.jpg" alt="The Rock Wood Fired Pizza" title="The Rock Wood Fired Pizza" width="100" height="100"></td>
+						<td>The Rock Wood Fired Pizza</td>
+						<td>Bar, Pizza, American</td>
+						<td>$$ - $$$</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4"><hr></td>
+					</tr>
+				</tfoot>
+			</table>
+		</section>
+	</article>
+	<footer>
+		<p>GOGO FOOD | Disney Land, CA</p>
+	</footer>
+
+	<!-- Javascript code from w3schools.com -->
+	<!-- Filter table according to restaurant name-->
+	<script>
+		function searchFilter() {
+		  var input, filter, table, tr, td, i, txtValue;
+		  input = document.getElementById("restaurant-input");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("restaurantTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+		    td = tr[i].getElementsByTagName("td")[1];
+		    if (td) {
+		      txtValue = td.textContent || td.innerText;
+		      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		        tr[i].style.display = "";
+		      } else {
+		        tr[i].style.display = "none";
+		      }
+		    } 
+		  }
+		}
+</script>
+</body>
+</html>
